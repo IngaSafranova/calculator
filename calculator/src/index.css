@@ -4,84 +4,59 @@
 
 body {
   margin: 0;
-   background-color: #28287130;
+  background: linear-gradient(to right, #00AAFF, #00FF6C);
 }
 
-.App {
-  display: flex;
-  
+.calculator-grid {
+  display: grid;
+  margin-top: 2rem;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
 }
 
-.calculator {
-  
-  display:flex;
-  flex-direction: column;
-  width: 320px;
-  height: 450px;
-  padding: 5px;
-  background-color: #282823;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-}
-.formulaScreen {
-  min-height: 20px;
-  font-size: 1.5rem;
-  color:orangered;
-  text-align: right;
-  line-height: 20px;
-  word-wrap: break-word;
-  border: none;
-}
-#display {
-  font-size: 2.5rem;
-  color: white;
-  text-align: right;
-  line-height: 35px;
-  
-}
-
-#clear {
-  background-color: #ff6666; 
-  
-}
-.jumbo {
-  width: 160px;
-}
- #zero {
-  bottom:33px;
-} 
-#decimal {
-  bottom: 33px;
-}
-button {
-  position: relative;
-  height: 65px;
-  width: 80px;
-  color: white ;
-  background-color: #282823;
-  outline: 1px solid black;
-  outline-style: solid;
-  outline-color: black;
-  outline-width: 1px;
-  border: none;
-  font-size: 20px;
+.calculator-grid > button {
   cursor: pointer;
-}
-.operatorButton {
-  background-color: rgb(102, 102, 102 );
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
 }
 
-#equals {
-  background-color: midnightblue;
-  
-  height: 136px;
-  bottom: 70px;
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: rgba(255, 255, 255, .9);
 }
-.author {
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  color:white;
+  font-size: 2rem;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+.author{
+  
+  width: auto;
+  margin-top:2rem;
 }
